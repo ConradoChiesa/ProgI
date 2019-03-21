@@ -38,7 +38,7 @@ public class Clase06Tp02 {
 		return counting;
 	}
 
-	public static int pedir_numero() {
+	private static int pedir_numero() {
 		int selection = 0;
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		try {
