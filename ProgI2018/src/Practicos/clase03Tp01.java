@@ -7,7 +7,7 @@ public class clase03Tp01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int numerador,denominador,baseResta;
-		double resultado;
+		float resultado;
 		try {
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Ingrese numerador:");
@@ -20,8 +20,8 @@ public class clase03Tp01 {
 			resultado = numerador/denominador;
 			resultado -= baseResta;
 			
-			System.out.printf("%1.2f", resultado);
-			
+			System.out.printf("%1.3f", resultado);
+		//System.out.println(numerador/denominador-baseResta);	
 			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block

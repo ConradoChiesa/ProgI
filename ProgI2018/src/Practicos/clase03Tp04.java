@@ -21,13 +21,10 @@ public class clase03Tp04 {
 			} else {
 				System.out.println("El número número "+num1+" no es multiplo de 6 y de 7");
 			}
-			if(num1>30 && num1%2==0) {
-				System.out.println("El número "+num1+" es mayor a 30 y multiplo de 2");
-			} else if (num1 <= 30) {
-				System.out.println("El número "+num1+" es menor o igual a 30");
-			}
-			int cociente = num1/5;
-			if (cociente>10) {
+			if(num1>30 && num1%2==0 || num1 <= 30) {
+				System.out.println("El número "+num1+" es mayor a 30 y multiplo de 2 o menor a 30");
+			}   
+			if (num1/5>10) {
 				System.out.println("El cociente de la división es mayor a 10");
 			}
 //			if (num2%2==0) {
