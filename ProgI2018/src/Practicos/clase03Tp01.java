@@ -6,21 +6,21 @@ public class clase03Tp01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int numerador,denominador,baseResta;
+		float numerador,denominador,baseResta;
 		float resultado;
 		try {
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Ingrese numerador:");
-			numerador=new Integer(entrada.readLine());
+			numerador=new Float(entrada.readLine());
 			System.out.println("Ingrese denominador:");
-			denominador=new Integer(entrada.readLine());
+			denominador=new Float(entrada.readLine());
 			System.out.println("Ingrese número a restar");
-			baseResta=new Integer(entrada.readLine());			
+			baseResta=new Float(entrada.readLine());			
 			
 			resultado = numerador/denominador;
 			resultado -= baseResta;
 			
-			System.out.printf("%1.3f", resultado);
+			System.out.printf("%1.2f", resultado);
 		//System.out.println(numerador/denominador-baseResta);	
 			
 		} catch (NumberFormatException e) {
