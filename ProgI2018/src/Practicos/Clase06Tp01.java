@@ -5,8 +5,8 @@ ingresados por el usuario (al menos 10 números).*/
 package Practicos;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Clase06Tp01 {
 

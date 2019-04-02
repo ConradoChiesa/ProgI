@@ -1,15 +1,30 @@
 package Practicos;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 public class prueba {
-	public static void main (String [] args) {
-		final int MAX = 10;
-		final int MULTIPLO = 3;
-		System.out.println("Tablas de multiplicar del 1, 2 y 3");
-		for (int i=1; i<=MULTIPLO; i++) {
-			System.out.println("Tabla de multiplicar del " + i);
-			for (int j=1; j<=MAX; j++) {
-				System.out.println(j + " * " + i + "= " + j*i );
-			}
-		}
-	}
+final static int MAX = 2;
+public static void main(String args[]) {
+//MAS ADELANTE HABRÍA QUE MODULARIZAR LA INICIALIZACION, CARGA E IMPRESION
+int B[]=new int[MAX];
+for (int con=0;con<MAX;con++) {
+System.out.println ("Ingrese integer: "+con);
+B[con]=obtenerEntero();
+}
+for (int con=0;con<MAX;con++)
+System.out.println(B[con]);
+}
+public static int obtenerEntero(){
+ int valor = 0;
+ boolean enterovalido = false;
+ BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+ do {
+ try {
+ valor = new Integer(entrada.readLine());
+ enterovalido = true;
+ }
+ catch (Exception exc ) { enterovalido = false; }
+ } while (!enterovalido);
+ return valor;
+}
 }

@@ -40,8 +40,8 @@ public class Clase06Tp02 {
 
 	private static int pedir_numero() {
 		int selection = 0;
-		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		try {
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			do {
 				System.out.println("ingrese un número entre 1 y 6");
 				selection = new Integer(entrada.readLine());
