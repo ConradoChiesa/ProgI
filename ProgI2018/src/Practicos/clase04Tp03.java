@@ -6,12 +6,15 @@ import java.io.InputStreamReader;
 public class clase04Tp03 {
 
 	public static void main(String[] args) {
-		
+		int day = 0;
 		try {
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("ingrese un número");		
-			int day = new Integer(entrada.readLine());
-			
+			day = new Integer(entrada.readLine());
+		}
+		catch (Exception exc ) {
+			System.out.println( exc );
+		}
 			switch (day) {
 				case 1: System.out.println("Lunes");
 					break;
@@ -29,10 +32,7 @@ public class clase04Tp03 {
 					break;
 			}
 			
-		}
-		catch (Exception exc ) {
-			System.out.println( exc );
-		}
+
 		
 	}
 

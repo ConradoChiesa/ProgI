@@ -1,30 +1,15 @@
 package Practicos;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 public class prueba {
-final static int MAX = 2;
-public static void main(String args[]) {
-//MAS ADELANTE HABRÍA QUE MODULARIZAR LA INICIALIZACION, CARGA E IMPRESION
-int B[]=new int[MAX];
-for (int con=0;con<MAX;con++) {
-System.out.println ("Ingrese integer: "+con);
-B[con]=obtenerEntero();
-}
-for (int con=0;con<MAX;con++)
-System.out.println(B[con]);
-}
-public static int obtenerEntero(){
- int valor = 0;
- boolean enterovalido = false;
- BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
- do {
- try {
- valor = new Integer(entrada.readLine());
- enterovalido = true;
- }
- catch (Exception exc ) { enterovalido = false; }
- } while (!enterovalido);
- return valor;
-}
+	public static final int a = 2;//constante global a todos
+	public static int b = 2;//variable global a todos
+	public static void main(String[] args) {
+		int a = 3;//local a main
+		System.out.println ("a = "+a);
+		System.out.println ("b = "+b);
+		imprimir();
+	}
+	public static void imprimir() {
+		
+		System.out.println(a);
+	}
 }

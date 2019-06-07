@@ -6,15 +6,20 @@ import java.io.InputStreamReader;
 public class clase04Tp06 {
 
 	public static void main(String[] args) {
+		int num1 = 0, num2 = 0, num3 = 0, mayor = 0;
 		try {
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("ingrese 1er número");		
-			int num1 = new Integer(entrada.readLine());
+			num1 = new Integer(entrada.readLine());
 			System.out.println("ingrese 2do número");	
-			int num2 = new Integer(entrada.readLine());
+			num2 = new Integer(entrada.readLine());
 			System.out.println("ingrese 3er número");	
-			int num3 = new Integer(entrada.readLine());
-			int mayor;
+			num3 = new Integer(entrada.readLine());
+		}
+		catch (Exception exc ) {
+			System.out.println( exc );
+		}
+			
 			if (num1<num2) {
 				mayor=num2;
 			} else {
@@ -25,10 +30,6 @@ public class clase04Tp06 {
 			}
 
 			System.out.println(mayor);
-		}
-		catch (Exception exc ) {
-			System.out.println( exc );
-		}
 	}
 
 }

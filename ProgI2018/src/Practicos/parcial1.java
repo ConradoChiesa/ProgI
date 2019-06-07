@@ -39,9 +39,9 @@ public class parcial1 {
 	private static boolean isnumber(char caracter) {
 		final int MAX = 10;
 		final int MIN = 0;
-		char [] numeros = {'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	//	char [] numeros = {'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
 		for (int i=MIN; i<MAX;i++) {
-			if (caracter == numeros[i]) {
+			if (caracter == (char)i) {
 				return true;
 			}
 		}
@@ -85,9 +85,9 @@ public class parcial1 {
 	}
 
 	private static boolean isleter(char caracter) {
-		final int MAX = 27;
-		final int MIN = 0;
-		final char [] letras = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		int MAX = 27;
+		int MIN = 0;
+		char [] letras = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 				'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
 				'x', 'y', 'z'};
 		for (int i=MIN; i<MAX;i++) {

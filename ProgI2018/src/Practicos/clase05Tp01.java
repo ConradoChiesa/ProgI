@@ -11,12 +11,9 @@ public class clase05Tp01 {
 		int altura = 0;
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		do {
-	
 			try {
 				System.out.println("ingrese un número del 1 al 3 inclusive");
-			
 				altura = new Integer(entrada.readLine());
-		
 			}
 			catch (Exception exc ) {
 				System.out.println( exc );

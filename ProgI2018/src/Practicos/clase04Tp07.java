@@ -6,55 +6,44 @@ import java.io.InputStreamReader;
 public class clase04Tp07 {
 
 	public static void main(String[] args) {
-
+		int mounth = 0, anio = 0000;
 		try {
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("ingrese un número de mes:");
-			System.out.println("1: Enero");
-			System.out.println("2: Febrero");
-			System.out.println("3: Marzo");
-			System.out.println("4: Abril");
-			System.out.println("5: Mayo");
-			System.out.println("6: Junio");
-			System.out.println("7: Julio");
-			System.out.println("8: Agosto");
-			System.out.println("9: Septiembre");
-			System.out.println("10: Octubre");
-			System.out.println("11: Noviembre");
-			System.out.println("12: Diciembre");
-			int mounth = new Integer(entrada.readLine());
-			
-			switch (mounth) {
-				case 1: System.out.println("Enero tiene 31 días");
-					break;
-				case 2: System.out.println("Febrero tiene 28 días");
-					break;
-				case 3: System.out.println("Marzo tiene 31 días");
-					break;
-				case 4: System.out.println("Abril tiene 30 días");
-					break;
-				case 5: System.out.println("Mayo tiene 31 días");
-					break;
-				case 6: System.out.println("Junio tiene 30 días");
-					break;
-				case 7: System.out.println("Julio tiene 30 días");
-					break;
-				case 8: System.out.println("Agosto tiene 31 días");
-					break;
-				case 9: System.out.println("Septiembre tiene 30 días");
-					break;
-				case 10: System.out.println("Octubre tiene 31 días");
-					break;
-				case 11: System.out.println("Noviembre tiene 30 días");
-					break;
-				case 12: System.out.println("Diciembre tiene 31 días");
-					break;
-			}
-			
+			System.out.println("ingrese un número de mes:\n1: Enero\n2: Febrero\n3: Marzo\n4: Abril\n5: Mayo\n6: Junio\n"
+								+ "7: Julio\n8: Agosto\n9: Septiembre\n10: Octubre\n11: Noviembre\n12: Diciembre");
+			mounth = new Integer(entrada.readLine());
 		}
 		catch (Exception exc ) {
 			System.out.println( exc );
+			mounth = 0;
 		}
+			if ((mounth>0)&&(mounth<13)) {
+				
+			switch (mounth) {
+				case 1: case 3: case 5: case 8: case 10: case 12: System.out.println("Este mes tiene 31 días");
+					break;
+				case 2: 
+					try {
+						BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+						System.out.println("ingrese un año en formato de 4 digitos");
+						anio = new Integer(entrada.readLine());
+					}
+					catch (Exception exc ) {
+						System.out.println( exc );
+					}
+					if  ((anio % 4 == 0) && ((anio % 100 != 0) || (anio % 400 == 0))) {
+						System.out.println("Febrero tiene o tuvo 29 días");
+					}else {
+						System.out.println("Febrero tiene o tuvo 28 días");
+						
+					}
+					break;
+				case 4: case 6: case 7: case 9: case 11: System.out.println("Este mes tiene 30 días");
+					break;
+			}
+			}
+			
+
 	}
 
 }

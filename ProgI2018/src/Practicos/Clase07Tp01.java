@@ -5,59 +5,79 @@ import java.io.InputStreamReader;
 
 public class Clase07Tp01 {
 	final static int MAX = 10;
-	final static int MIN = 0;
+	final static int MAX_ENT = 100;
 	public static void main(String args[]) {
-		int num = 0;
+		int num, pos;
 		int arr[]=new int[MAX];
+		llenararreglo(arr); //Lo llena de forma aleatoria
+		ordenararr(arr); // Lo ordena de menor a mayor
+		imprimirarr(arr); // Imprime el arreglo
+		num=pedirvalor(); //Pide un valor entre 0 y 100
+		pos=buscarvalor(arr, num);
+		evaluarbusqueda(pos);
+	
+	}
+	public static void evaluarbusqueda(int pos) {
+		if (pos!=-1) {
+			System.out.println("El valor ingresado se encuentra en la posición "+ (pos+1));
+		} else {
+			System.out.println("No se encontro el valor");
+		}
+	}
+	public static int pedirvalor() {
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		int num=0;
+		do {
+			try {
+				System.out.println("\nIngrese un valor");
+				num = new Integer(entrada.readLine());
+			} catch (Exception exc) {
+				System.out.println(exc);
+				num = 0;
+			}
+		} while((num<0)||(num>MAX_ENT));
+		return num;
+	}
+	
+	public static int buscarvalor(int[] arr, int buscado) {
+		int pos=0, temp=-1;
+		while ((pos<MAX)&&(arr[pos]<=buscado)) {
+			if (arr[pos] == buscado) {
+				temp=pos;
+			}		
+			pos++;
+		}
+		return temp;
+	}
+	
+	public static void imprimirarr(int[] arr) {
+		
+		for (int h=1;h<=MAX;h++) {
+			System.out.print(h+ ": " +arr[h-1]+"   ");
+		}
+	}
+	
+	public static void ordenararr(int[] arr) {
+		int temp;
+		for(int	i = 1;i < MAX;i++){
+			for (int j = 0 ; j < MAX-1; j++){
+				if (arr[j] > arr[j+1]){
+					temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}
+			}
+		}
+	}
+	
+	public static void llenararreglo(int[] arr) {
 		for (int  i=0;i<MAX;i++) {
 			arr[i] = obtenerEnteros();
-		}
-		for (int h=0;h<MAX;h++) {
-//			System.out.println(h+ " " +arr[h]);
-			System.out.print(h+ ": " +arr[h]+"   ");
-		}
-		try {
-			do {
-			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("\nIngrese una posicion entre " +MIN+ " y "+(MAX-1));
-			num = new Integer(entrada.readLine());
-			} while((num<MIN)||(num>(MAX-1)));
-			System.out.println("Valor de la celda "+num+ ": " + arr[num]);
-		} catch (Exception exc) {
-			System.out.println(exc);
-		}
-		
+		}		
 	}
-	private static int obtenerEnteros() {
-		int aux = (int)Math.round(Math.random()*100); 
-		return aux;
+	public static int obtenerEnteros() {
+		int temp = (int)(100*Math.random()+1); 
+		return temp;
 	}
 
 }
-
-//public class Clase07Tp01 {
-//	final static int MAX = 2;
-//	public static void main(String args[]) {
-//		//MAS ADELANTE HABRÍA QUE MODULARIZAR LA INICIALIZACION, CARGA E IMPRESION
-//		int B[]=new int[MAX];
-//		for (int con=0;con<MAX;con++) {
-//			System.out.println ("Ingrese integer: "+con);
-//			B[con]=obtenerEntero();
-//		}
-//		for (int con=0;con<MAX;con++)
-//			System.out.println(B[con]);
-//	}
-//	public static int obtenerEntero(){
-//		int valor = 0;
-//		boolean enterovalido = false;
-//		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-//		do {
-//			try {
-//				valor = new Integer(entrada.readLine());
-//				enterovalido = true;
-//			}
-//			catch (Exception exc ) { enterovalido = false; }
-//		} while (!enterovalido);
-//		return valor;
-//	}
-//}

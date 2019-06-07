@@ -14,16 +14,19 @@ public class clase05Tp02 {
 		final int minimo = 0;
 		int multiplicando = 0;
 		try {
+		do {
+			
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("ingrese número a multiplicar");
 			multiplicando = new Integer(entrada.readLine());
-		
-			for (int i=minimo;i<maximo;i++) {
-				System.out.println(multiplicando + "x" + i + "=" + (multiplicando*i));
-			}
+		}while ((multiplicando>0)||(multiplicando<0));
 		}
 		catch(Exception exc ){
 			System.out.println( exc );
+		}
+		
+		for (int i=minimo;i<maximo;i++) {
+			System.out.println(multiplicando + "x" + i + "=" + (multiplicando*i));
 		}
 	}
 
